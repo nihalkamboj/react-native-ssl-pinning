@@ -189,11 +189,11 @@ public class RNSslPinningModule extends ReactContextBaseJavaModule {
                 }
                 client = OkHttpUtils.buildOkHttpClient(cookieJar, domainName, certs, options);
             } else {
-                callback.invoke(new Throwable("key certs was not found"), null);
+                     callback.invoke("key certs was not found", null);
             }
         } else {
             //no ssl pinning
-            callback.invoke(new Throwable(KEY_NOT_ADDED_ERROR), null);
+                callback.invoke(KEY_NOT_ADDED_ERROR, null);
             return;
         }
 
